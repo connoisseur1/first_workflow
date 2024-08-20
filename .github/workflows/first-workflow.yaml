@@ -1,0 +1,12 @@
+name: First Workflow
+on: [push]
+jobs:
+  run-shell-commands:
+    runs-on: ubunt-latest
+    steps:
+      - name: Echo a string
+        run: echo "Hello World"
+      - name: Multi step command
+        run: |
+          node -v
+          npm -v
