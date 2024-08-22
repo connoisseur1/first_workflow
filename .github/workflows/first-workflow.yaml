@@ -5,8 +5,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Echo a string
-        run: echo "Hello World"
-      - name: Multi step command
+        run: echo "Hello World!"
+      - name: Multiline Command
         run: |
           node -v
           npm -v
+  parallel-job-macos:
+    runs-on: macos-latest
+    steps:
+      - name: View SW Version
+        run: sw_vers
+  dependent-job:
+    needs: [run-shell-commands, parallel-job-macos]
+    runs-on: windows-latest
+    steps:
+      - name: Echo a string
+        run: Write-Output "Hello World!"
+      - name: Error step
+        run: doesntexist
