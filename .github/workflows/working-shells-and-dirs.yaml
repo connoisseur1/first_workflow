@@ -34,4 +34,4 @@ jobs:
       - name: Python Shell
         run: |
           import python
-          print(platorm.processor())
+          print(platorm.system())
