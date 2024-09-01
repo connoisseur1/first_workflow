@@ -34,5 +34,5 @@ jobs:
       - name: Python Shell
         shell: python
         run: |
-          import platform
+          from platform import Platform
           print(platorm.processor())
