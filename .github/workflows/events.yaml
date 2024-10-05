@@ -13,4 +13,5 @@ jobs:
       - run: |
           echo $GITHUB_SHA
           echo $GITHUB_REF
+          echo $GITHUB_REPOSITORY
       - uses: actions/checkout@v3
