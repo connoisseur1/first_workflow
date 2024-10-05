@@ -2,7 +2,7 @@ name: Workflow Run
 on:
   workflow_run:
     workflows: [Repsitory events]
-    types: [completed]
+    types: [completed, requested]
 
 jobs:
   echo-string:
