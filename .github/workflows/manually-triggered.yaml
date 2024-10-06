@@ -1,5 +1,12 @@
 name: Manually Triggered
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      string:
+        description: "A string input"
+        required: true
+        type: string
+        default: "Default value"
 
 jobs:
   log-info:
