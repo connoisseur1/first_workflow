@@ -7,6 +7,27 @@ on:
         required: true
         type: string
         default: "Default value"
+      number:
+        description: "A number input"
+        default: 100
+        type: number
+      option:
+        description: "An options input"
+        required: true
+        default: "option 3"
+        type: choice
+        options:
+          - option 1
+          - option 2
+          - option 3
+      boolean:
+        description: "A boolean option"
+        required: false
+        type: boolean
+      environment:
+        description: "Environment"
+        type: environment
+        required: true
 
 jobs:
   log-info:
@@ -15,3 +36,10 @@ jobs:
       - run: |
           echo $GITHUB_SHA
           echo $GITHUB_REF
+      - run: |
+          echo "Inputs:"
+          echo "String: ${{ inputs.string }}"
+          echo "Number: ${{ inputs.number }}"
+          echo "Option: ${{ inputs.option }}"
+          echo "Boolean: ${{ inputs.boolean }}"
+          echo "Environment: ${{ inputs.environment }}"
